@@ -524,7 +524,7 @@ var LogAlertsHostPool = [
               | parse _ResourceId with "/subscriptions/" subscriptionAgentHealth "/resourcegroups/" ResourceGroupAgentHealth "/providers/microsoft.desktopvirtualization/hostpools/" HostPool
               | extend parts = split(SessionHostResourceId, "/")
               | extend VMsubscription = parts[2]
-              | extend VMresourceGroup = parts[4]
+              | extend VMresourceGroup = tostring(parts[4])
               | extend ComputerName = parts[-1]
               | extend ComputerName=tolower(ComputerName)
               | summarize arg_max(TimeGenerated,*) by ComputerName
@@ -600,7 +600,7 @@ var LogAlertsHostPool = [
               | parse _ResourceId with "/subscriptions/" subscriptionAgentHealth "/resourcegroups/" ResourceGroupAgentHealth "/providers/microsoft.desktopvirtualization/hostpools/" HostPool
               | extend parts = split(SessionHostResourceId, "/")
               | extend VMsubscription = parts[2]
-              | extend VMresourceGroup = parts[4]
+              | extend VMresourceGroup = tostring(parts[4])
               | extend ComputerName = parts[-1]
               | extend ComputerName=tolower(ComputerName)
               | summarize arg_max(TimeGenerated,*) by ComputerName
@@ -673,7 +673,7 @@ var LogAlertsHostPool = [
                 | parse _ResourceId with "/subscriptions/" subscriptionAgentHealth "/resourcegroups/" ResourceGroupAgentHealth "/providers/microsoft.desktopvirtualization/hostpools/" HostPool
                 | extend parts = split(SessionHostResourceId, "/")
                 | extend VMsubscription = parts[2]
-                | extend VMresourceGroup = parts[4]
+                | extend VMresourceGroup = tostring(parts[4])
                 | extend ComputerName = parts[-1]
                 | extend ComputerName=tolower(ComputerName)
                 | summarize arg_max(TimeGenerated,*) by ComputerName
@@ -759,7 +759,7 @@ var LogAlertsHostPool = [
                 | parse _ResourceId with "/subscriptions/" subscriptionAgentHealth "/resourcegroups/" ResourceGroupAgentHealth "/providers/microsoft.desktopvirtualization/hostpools/" HostPool
                 | extend parts = split(SessionHostResourceId, "/")
                 | extend VMsubscription = parts[2]
-                | extend VMresourceGroup = parts[4]
+                | extend VMresourceGroup = tostring(parts[4])
                 | extend ComputerName = parts[-1]
                 | extend ComputerName=tolower(ComputerName)
                 | summarize arg_max(TimeGenerated,*) by ComputerName
@@ -844,7 +844,7 @@ var LogAlertsHostPool = [
                 | parse _ResourceId with "/subscriptions/" subscriptionAgentHealth "/resourcegroups/" ResourceGroupAgentHealth "/providers/microsoft.desktopvirtualization/hostpools/" HostPool
                 | extend parts = split(SessionHostResourceId, "/")
                 | extend VMsubscription = parts[2]
-                | extend VMresourceGroup = parts[4]
+                | extend VMresourceGroup = tostring(parts[4])
                 | extend ComputerName = parts[-1]
                 | extend ComputerName=tolower(ComputerName)
                 | summarize arg_max(TimeGenerated,*) by ComputerName
@@ -930,7 +930,7 @@ var LogAlertsHostPool = [
                 | parse _ResourceId with "/subscriptions/" subscriptionAgentHealth "/resourcegroups/" ResourceGroupAgentHealth "/providers/microsoft.desktopvirtualization/hostpools/" HostPool
                 | extend parts = split(SessionHostResourceId, "/")
                 | extend VMsubscription = parts[2]
-                | extend VMresourceGroup = parts[4]
+                | extend VMresourceGroup = tostring(parts[4])
                 | extend ComputerName = parts[-1]
                 | extend ComputerName=tolower(ComputerName)
                 | summarize arg_max(TimeGenerated,*) by ComputerName
@@ -1016,7 +1016,7 @@ var LogAlertsHostPool = [
                 | parse _ResourceId with "/subscriptions/" subscriptionAgentHealth "/resourcegroups/" ResourceGroupAgentHealth "/providers/microsoft.desktopvirtualization/hostpools/" HostPool
                 | extend parts = split(SessionHostResourceId, "/")
                 | extend VMsubscription = parts[2]
-                | extend VMresourceGroup = parts[4]
+                | extend VMresourceGroup = tostring(parts[4])
                 | extend ComputerName = parts[-1]
                 | extend ComputerName=tolower(ComputerName)
                 | summarize arg_max(TimeGenerated,*) by ComputerName
@@ -1102,7 +1102,7 @@ var LogAlertsHostPool = [
                 | parse _ResourceId with "/subscriptions/" subscriptionAgentHealth "/resourcegroups/" ResourceGroupAgentHealth "/providers/microsoft.desktopvirtualization/hostpools/" HostPool
                 | extend parts = split(SessionHostResourceId, "/")
                 | extend VMsubscription = parts[2]
-                | extend VMresourceGroup = parts[4]
+                | extend VMresourceGroup = tostring(parts[4])
                 | extend ComputerName = parts[-1]
                 | extend ComputerName=tolower(ComputerName)
                 | summarize arg_max(TimeGenerated,*) by ComputerName
@@ -1188,7 +1188,7 @@ var LogAlertsHostPool = [
                 | parse _ResourceId with "/subscriptions/" subscriptionAgentHealth "/resourcegroups/" ResourceGroupAgentHealth "/providers/microsoft.desktopvirtualization/hostpools/" HostPool
                 | extend parts = split(SessionHostResourceId, "/")
                 | extend VMsubscription = parts[2]
-                | extend VMresourceGroup = parts[4]
+                | extend VMresourceGroup = tostring(parts[4])
                 | extend ComputerName = parts[-1]
                 | extend ComputerName=tolower(ComputerName)
                 | summarize arg_max(TimeGenerated,*) by ComputerName
