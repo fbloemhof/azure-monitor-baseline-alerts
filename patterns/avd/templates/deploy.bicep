@@ -2366,7 +2366,7 @@ module roleAssignment_AutoAcctDesktopRead 'carml/1.3.0/Microsoft.Authorization/r
 
 // Assign role to Automation Account for Desktop Virtualization Reader to account for all AVD Resources and VMs if in the same Resource Group
 // (Needed for Automation Account)
-module roleAssignment_AutoAcctDesktopReadSameRG 'carml/1.3.0/Microsoft.Authorization/roleAssignments/resourceGroup/deploy.bicep' ={
+module roleAssignment_AutoAcctDesktopReadSameRG 'carml/1.3.0/Microsoft.Authorization/roleAssignments/resourceGroup/deploy.bicep' = if (AllResourcesSameRG) {
     scope: resourceGroup(split(AVDResourceGroupId, '/')[4])
     name: 'c_DsktpRead_${split(AVDResourceGroupId, '/')[4]}'
     params: {
